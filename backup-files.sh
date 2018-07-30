@@ -28,7 +28,7 @@ tarandzip(){
 movetoSpace(){
     echo "\n##### MOVING TO FREE-WILLY #####\n"
     if scp $GIVENNAME-$DATETIME.tar.gz pablo@10.4.43.6:$DST; then
-        echo "\n##### Done moving files to free-willy://"$DST" #####\n"
+        rm $GIVENNAME-$DATETIME.tar.gz && echo "\n##### Done moving files to free-willy://"$DST" #####\n"
         return 0
     else
         echo "\n##### Failed to move files to free-willy #####\n"
