@@ -26,12 +26,12 @@ tarandzip(){
     fi
 }
 movetoSpace(){
-    echo "\n##### MOVING TO SPACE #####\n"
-    if ~/s3cmd-2.0.1/s3cmd put $GIVENNAME-$DATETIME.tar.gz s3://$DST; then
-        echo "\n##### Done moving files to s3://"$DST" #####\n"
+    echo "\n##### MOVING TO FREE-WILLY #####\n"
+    if scp $GIVENNAME-$DATETIME.tar.gz pablo@10.4.43.6/$DST; then
+        echo "\n##### Done moving files to free-willy://"$DST" #####\n"
         return 0
     else
-        echo "\n##### Failed to move files to the Space #####\n"
+        echo "\n##### Failed to move files to free-willy #####\n"
         return 1
     fi
 }
